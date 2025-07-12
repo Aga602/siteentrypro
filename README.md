@@ -52,34 +52,6 @@ npm run genkit:dev
 
 This will start the Genkit development UI, typically on port 4000, which you can use to inspect and test your AI flows.
 
-## Running with Docker
-
-You can also run the production version of this application using Docker.
-
-### Prerequisites
-
-- [Docker](https://www.docker.com/get-started) installed on your machine.
-
-### 1. Build the Docker Image
-
-From the root of the project, run the following command to build the Docker image:
-
-```bash
-docker build -t site-entry-pro .
-```
-
-### 2. Run the Docker Container
-
-Once the image is built, you can run it as a container:
-
-```bash
-docker run -p 9002:3000 site-entry-pro
-```
-
-This command starts the container and maps port 9002 on your local machine to port 3000 inside the container. The application will be available at [http://localhost:9002](http://localhost:9002).
-
-**Note:** The Docker container runs the production build of the Next.js app. For AI features to work, you will still need to run the Genkit server locally on your host machine as described in the "Local Development" section.
-
 ## Getting Started
 
 - The main entry point for the application is `src/app/page.tsx`.
