@@ -1,0 +1,22 @@
+@media print {
+  body {
+    background-color: #fff;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  .printable-content {
+    margin: 0;
+    padding: 0;
+  }
+  .printable-content .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  .printable-content .print\:border-none {
+    border: none !important;
+  }
+  @page {
+    size: auto;
+    margin: 0.5in;
+  }
+}
