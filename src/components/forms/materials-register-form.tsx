@@ -2,8 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { useActionState, useEffect } from "react";
 import { materialsSchema, type MaterialsSchema } from "@/lib/types";
 import { submitMaterialsRegister } from "@/lib/actions";
 import { useToast } from "@/hooks/use-toast";
@@ -30,7 +29,7 @@ const initialState = {
 };
 
 export function MaterialsRegisterForm() {
-  const [state, formAction] = useFormState(submitMaterialsRegister, initialState);
+  const [state, formAction] = useActionState(submitMaterialsRegister, initialState);
   const { toast } = useToast();
 
   const form = useForm<MaterialsSchema>({

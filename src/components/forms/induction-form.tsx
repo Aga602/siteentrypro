@@ -2,8 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { useActionState, useEffect } from "react";
 import { inductionSchema, type InductionSchema } from "@/lib/types";
 import { submitInduction } from "@/lib/actions";
 import { useToast } from "@/hooks/use-toast";
@@ -29,7 +28,7 @@ const initialState = {
 };
 
 export function InductionForm() {
-  const [state, formAction] = useFormState(submitInduction, initialState);
+  const [state, formAction] = useActionState(submitInduction, initialState);
   const { toast } = useToast();
 
   const form = useForm<InductionSchema>({
